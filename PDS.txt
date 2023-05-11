@@ -1,0 +1,81 @@
+14/03/2023
+
+data structures
+
+
+
+
+
+-------------------------------------------------
+
+28/03/2023
+
+level_order:
+
+def linear_order(self,root):
+    q=[root]
+    while len(q)!=0:
+        ele=q.pop(0)
+        print(ele.data)
+        if ele.left!=0:
+            q.append(ele.left)
+        if ele.right!=0:
+            q.append(ele.right)
+            
+--------------------------
+graph:
+main types of graphs:
+1. direct 
+2. indirect
+undirect graph are 2 types:
+1. regular
+2. weighted
+directed graph 2 types:
+1. regular direct graph
+2. weighted regular graph
+t
+-------------
+graph traversal
+
+1. breath for search
+2. death for search
+--------------------------
+bfs:
+there is no specific output i,e  many outputs
+-------------------------------------------------------
+*bfs code:
+
+def bfs(graph,start):
+    q=[start]
+    visited=[start]
+    while len(q)!=0:
+        ele=q.pop(0)
+        print(ele)
+        for i in graph[ele]:
+            if i not in visited:
+                q.append(i)
+                visited.append(i)
+            
+    
+graph={10: [20,40,50],20:[10,40],30:[40,50],40:[10,20,30,50],50:[10,40,30]}
+bfs(graph,20)
+-----------------------------------------------------------------------------------
+dfs:
+stack is used in dfs(depth first search) and it produces the spanning tree.
+def dfs(graph,start,visited=None):
+    if visited==None:
+        visited=[]
+    visited.append(start)
+    print(start)
+    for i in graph[start]:
+        if i not in visited:
+            visited.append(i)
+            dfs(graph,i,visited)
+graph={10:[20,40,50],20:[10,40],30:[40,50],40:[10,20,30,50],50:[10,30,40]}
+dfs(graph,20)
+we have four types of functions-
+1.default value function-
+
+
+
+
