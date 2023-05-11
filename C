@@ -1,0 +1,375 @@
+converting into binary
+93-->1011101
+116-->01110100
+198-->011000110
+298-->100101010
+1298-->10100010010
+5673-->1011000101001
+
+BITWISE -->OPERATORS
+1.AND(&)
+   TT  T   F
+   T   T   F
+   F   F   F
+EX..   5 & 7 --> 0 1 0 1
+                 0 1 1 1
+		     --------
+		     0 1 0 1   (05)
+       13 & 17 --> 0 0 1 1 0 1
+                   0 1 0 0 0 1
+			-------------
+			 0 0 0 0 0 1   (01)
+	17 & 25 --> 0 0 1 1 0 1
+			0 1 1 0 0 1
+			------------
+			0 0 1 0 0 1  (17)
+       35&96-->32                             256 128 64 32 16 8 4 2 1
+       117&264-->0
+
+2.OR(|)
+    TT   T   F
+    T    T   T
+    F    T   F
+
+EX... 5| 3-->   0101
+		    0011
+		   ------
+		    0111 (7)
+      16 | 25-->  10000
+                  11001
+                 -------
+			11001  (25)
+      13|17 --->   001101
+                   010001
+                  ---------
+			 011101 (29)
+      235|73-->   11101011
+                  01001001
+                  ---------
+                  11101011 (235)
+      76|22-->94
+
+3.XOR EXCLUSIVE OR(^)
+   TT  T  F
+   T   F  T
+   F   T  F
+
+ EX..  13^17-->  01101
+                 10001
+                -------
+                 11100  (28)
+
+       32^16-->32+16=48
+       47^53--> 0101111
+		    0110101
+               ---------
+   		    0011010 (26)
+      18^9-->10010
+             01001
+            --------
+             11011 (27)
+      37^19-->54
+4.SHIFTING(>>,<<)
+   LEFT SHIFT(<<)
+
+EX.. 7<<1 --> 111<<1 --> 1110 (14 --> 7*(2**1))
+     7<<2 --> 111<<2 --< 11100 (28 --> 7*4)
+     7<<3 --> 111<<3 --> 111000 (56 --> 7*8)
+      
+     N<<K --> N*(2**K)
+   RIGHT SHIFT(>>)
+ 
+EX.. 35>>1 --> 0100011>>1 --> 0010001 (17)
+     35>>2 --> 0100011>>2 --> 0001000 (8)
+35>>3 --> 0100011>>3 --> 0000100 (4)
+
+   
+    N>>K -->  N//(2**K)
+ 
+
+PRECEDENCE FOR BITWISE...
+	1..SHIFT RIGHT(>>) , SHIFT LEFT(<<)
+      2..AND (&)
+	3..XOR (^)
+	4..OR  (|)
+
+
+
+TCS NINJA..WIPRO..
+
+#include<stdio.h>
+int main(){
+      printf("%d",12&3|5^2);  //12&3==0 , 5^2==7 , 0|7==7
+}
+ans...(7)
+
+#include<stdio.h>
+int main(){
+      printf("%d",13>>1&4|3);  
+}
+ans...(7)
+
+
+#include<stdio.h>
+int main(){
+      printf("%d",67^3^5&2&1);  //(ASSOCITIVITY(BITWISE) LEFT TO RIGHT)
+}                               //5&2==0 , 0&1==0 , 67^3=64 , 64^0==64
+ans...(64)
+
+
+#include<stdio.h>
+int main(){
+      printf("%d",45^3&5|56>>1<<3);  //56>>1==28 , 28<<3==224 , 3&5==1 , 45^1==44 , 44|224==236
+}
+ans...(236)
+
+
+CONDITIONAL STATEMENTS
+
+#include<stdio.h>
+int main{
+int var=56;                        //n%x=n-(n/x)*x         
+if (var%2==0)printf("even");       
+else printf("odd");                
+}
+
+
+ by using binary and bitwise we can obtain the optimal solutions
+"%" has highest time complexity among all the operators..because it has many operations
+bitwise operators have least time complexity
+
+mynumber & 1 ==1  mynumber is ODD
+mynumber & 1 ==0  mynumber is EVEN
+
+
+#include<stdio.h>
+int main(){
+    int var=56;
+    if ((var&1)==0)printf("even");  
+    else ((var&1)==1)printf("odd");
+}
+
+//if (var&1==0)printf("even")  gives odd for var=56 () is important
+
+======================================================
+
+#include<stdio.h>
+int main(){
+    int age=5,aadhar=1,someotherid=1;
+    if (age>=18 && (aadhar==1 || someotherid==1))printf("allowed");  
+    else printf("not allowed");
+}
+
+
+
+
+//never leave else statements blankly..the condition is given only for c..if else given
+//for all other cases rtc will be printed.
+
+#include <stdio.h>
+
+int main()
+{
+    char grade='A';
+    if (grade=='A')printf("CAR");
+    else if (grade=='B')printf("BIKE");
+    else if (grade=='C')printf("RTC");
+    
+}
+
+==================================================
+
+/////find the greatest of a,b,c
+#include <stdio.h>
+
+int main()
+{
+    int a=70,b=70,c=70;
+    if((a>=b)&&(a>=c))printf("%d",a);
+    else if(b>=c)printf("%d",b);
+    else if(c>=b)printf("%d",c); //else printf("C");
+}
+//T(n)=6    contains checks and switches
+--------------------------------
+n		100	1000	10000
+
+T(n)		600	6000 60000
+
+more efficient..
+//ternary operator (?) and gaussian elimination or gauss-jordon elimination
+
+
+//greatest of two
+
+#include <stdio.h>
+int main()
+{
+    int a=90,b=30;
+    printf(a>=b?"A":"B");  
+}
+
+
+//greatest of 3
+
+#include <stdio.h>
+
+int main()
+{
+    int a=30,b=90,c=20;
+    printf(a>=b?(a>=c?"A":"C"):(b>=c?"B":"C"));
+}
+//T(n)=4  contains checks and switches
+------------------------------------
+n	100	1000		10000
+T(n) 400  4000     40000
+
+
+//greatest of 4
+
+//greedy method(if else)..takes T(n)=12
+
+
+//gaussian elimination
+
+
+#include <stdio.h>
+
+int main()
+{
+    int a=100,b=1000,c=4000,d=1000;
+    printf(a>=b?((a>=c?((a>=d)?"A":"D"):(c>=d)?"C":"D")):(b>=c?(b>=d?"B":"D"):(c>=d?"C":"D")));
+}
+//T(n)=6
+
+
+==============================================================
+
+what makes a good algorithm??
+1  correctness   correct for all cases
+2  efficiency    fast , no redunctant
+
+
+================================================================
+
+RANGES
+TO PICK ONE OBJECT DONT USE IF ELSE AND TERNARY METHOD..
+EXAMPLE
+
+
+
+#include <stdio.h>
+
+int main()
+{
+    char grade='A';
+    printf(grade=='A'?"car":grade=='B'?"bike":grade=='c'?"rtc":"walk");//ternary
+
+    if (grade=='A')printf("CAR");
+    else if (grade=='B')printf("BIKE");
+    else if (grade=='C')printf("RTC");
+    else printf("WALK");//if else
+    
+}
+
+to choose or pick output use switch case
+
+#include <stdio.h>
+
+int main()
+{
+    char g='g';
+    switch(g){
+        case 'a':printf("car");break;
+        case 'b':printf("bike");break;
+        case 'c':printf("rtc");break;
+        default:printf("walk");break;
+    }
+}
+//T(n)=2   one to check and one to switch
+
+
+=========================================================
+
+if marks are between 700 and 800,gradeis A
+if marks are between 600 and 699,gradeis B
+if marks are between 400 and 599,gradeis C
+if marks are between 0 and 399,gradeis F
+//2 checks
+//syntax..switch(m){case 700(space)...(space)800:print();break;
+
+
+#include <stdio.h>
+
+int main()
+{
+    int m=200;
+    switch(m){
+        case 700 ... 800:printf("A");break;
+        case 600 ... 699:printf("B");break;
+        case 400 ... 599:printf("C");break;
+        default:printf("F");
+    }
+}
+
+====================================================================================
+
+loops
+
+#include <stdio.h>
+
+int main()
+{
+    int i=-10;
+    while(i<=10){
+        printf("%d ",i);
+        i+=1;
+    }
+}
+
+====================================================================================
+
+==>>to take input and print array elements..
+
+
+
+#include <stdio.h>
+
+int main()
+{
+    int arr[5],i=0;
+    while(i<=4){
+        scanf("%d",&arr[i]);
+        i+=1;
+    }
+    i=0;
+    while(i<=4){
+        printf("%d\t",arr[i]);
+        i+=1;
+    }
+
+}
+
+========================================================================
+
+==>>replacing elements of array with their squares
+
+#include <stdio.h>
+
+int main()
+{   
+    int arr[10],j=0,i=0;
+    for(i=0;i<10;i++){
+        scanf("%d",&arr[i]);
+    }
+    
+    for(i=0;i<10;i++){
+        arr[i]=(arr[i]*arr[i]);
+    }
+    
+    for(i=0;i<10;i++){
+        printf("%d\t",arr[i]);
+    }
+}
+
+=============================================================================
+
