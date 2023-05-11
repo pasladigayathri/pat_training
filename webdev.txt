@@ -1,0 +1,176 @@
+USE OF HTML:
+
+  USING ONLY JS TO BUILD A PAGE IS COMPLEX..NO PROPER STRUCTURE
+  USING HTML .. WILL HAVE A PROPER STRUCTURE(ON THAT STRUCTURE WE STYLE THE PAGE USING CSS AND 
+     JS FOR FUNCTIONALITY)
+
+
+
+
+2 TYPES OF DATA:
+DISPLAY DATA:
+   1.STATIC 
+   2.DYNAMIC
+
+META DATA:
+charset="utf-8"... encoding
+
+To understand what websites has..
+THE DESCRIPTION SEEN UNDER A LINK ON GOOGLE
+WHEN ONE SEARCHES SOMETHING ON GOOGLE,WEBSITES SHOWUP DEPENDING ON THE META DATA IS GIVEN IN THE WEBSITE.
+
+Link...to connect css,packages(icons,fonts etc)..to link resources,assets
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">...
+to make the website compatiable with edge
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">.. 
+responsiveness of the website..size fitting ..if width is given 100px or any size..website will be 100px 
+on any device..height is not mentioned..it depends upon the amount of content.
+
+bootstrap...responsive pages
+
+
+
+HEAD..
+stores the information regarding the website
+
+BODY..
+to display
+
+HTML ELEMENTS(2 TYPES):
+   IN-LINE element (occupies space next to other)
+   ex:<b>(bold)
+   BLOCK element   (each in one line)
+   ex: <p>(paragraph)
+-----------------------------------------------------
+<P>this is paragraph 1</P>  .............block element
+    <p>this is paragraph 2</p>
+    <b>bold tag1</b>
+    <b>bold tag2</b>
+   
+output:
+
+this is paragraph 1
+
+this is paragraph 2
+
+bold tag1 bold tag2
+
+
+------------------------------------------------------
+ANCHOR LINK
+
+<a href="">click me</a>
+(HYPERLINK)HREF  ..TO WHICH PAGE ONE SHOULD NAVIGATE WHEN CLICKED ON CLICK ME..
+
+-------------------------------------------------
+TAGS:
+  1.TEXT TAG
+     paragraph
+     bold
+     italian
+     emphasized
+  2.MEDIA TAGS:
+     1.AUDIO
+     2.VIDEO
+
+<opening_tag>content<closing_tag>
+
+THE ELEMENTS WHICH HAVE NO CLOSING TAG: SELF_CLOSING TAG OR STAND_ALONE TAG..
+<img src="" alt="" />  '/' SHOULD BE PLACED IN CASE OF TYPESCRIPT AND REACT..
+
+<img src="assets/img/imgs.png" alt="cartoon-img" height="600px" width="600px"/>
+
+
+Source :in img tag supports ..link,path (source_type: url, relative path, data url)
+
+<img src="data: image/png, base64 harsndbfygjeku" alt="cartoon-img" height="600px" width="600px"/>
+    the image is converted into data and then displayed
+
+
+list:
+
+<ul type="sqaure">
+        <li>home</li>
+        <li>about us</li>
+        <li>services</li>
+        <li>contact us</li>
+        <li>login/register</li>
+    </ul>
+
+<ol type="A">
+        <li>home</li>
+        <li>about us</li>
+        <li>services</li>
+        <li>contact us</li>
+        <li>login/register</li>
+</ol>
+
+
+-------------------------------------------------------------
+
+
+WIRE FRAME....SKELETON OF WEBSITE..
+------------------------------------------------------------
+
+DIVISION:(BLOCK ELEMENT)
+
+ID AND CLASSES : TO REPRESENT UNIQUELY
+ID SHOULD BE UNIQUE
+CLASS CAN BE SAME FOR OTHER ELEMENTS..
+
+display: flex (in the same line)
+place-content: space-between
+               space-around
+               space-evenly
+
+height: 100vh       takes the full screen
+justify-content: center
+                 flex-left
+                 flex-right     moves image horizontally
+
+
+align-items: moves image vertically
+
+
+
+position:
+positions the image based on the starting point of the image.
+
+position: absolute; top:50%; left: 50%;
+transform: transulate(-50%,-50%);
+
+transulate..-50% of image...ie making the position property to start from 0,0 ie center
+
+----------------------------------------------
+CSS
+
+font-family: forte
+             magneto
+             from microsoft word
+
+FORM ELEMENTS:
+TEXT
+FORM
+SUBMIT
+RADIO BUTTON
+DATE
+TELEPHONE
+CHECK BOX
+DROP DOWN
+INPUT
+
+
+label:
+<label for="user_name">Username:</label>
+<input id="user_name" type="text" placeholder="Enter your name:">
+
+radio button:
+choose the correct option
+
+textarea:
+to write some lines of words
+
+
+
