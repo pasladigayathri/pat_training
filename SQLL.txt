@@ -1,0 +1,6 @@
+create table player(pid int primary key,
+                    pname varchar2(20) not null,
+                    ranking integer);
+INSERT INTO player VALUES(01,'hima',03);
+select * from player;
+INSERT INTO player VALUES(02,'RAM',03);
