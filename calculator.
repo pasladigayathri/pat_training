@@ -1,0 +1,6 @@
+.calc-text{
+    background-color:rgb(113, 230, 230)
+}
+.calc-box{
+    background-color:rgb(27, 114, 114)
+}
