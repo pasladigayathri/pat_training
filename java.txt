@@ -1,0 +1,456 @@
+JAVA(JAVATPOINT)
+
+--->JAVA STARTED AS A PROJECT CALLED, 'OAK' BY JAMES GOSLING IN 1991.
+	JAVA IS AN OBLECT ORIENTED PROGRAMMING LANGUAGE DEVELOPED BY SUN MICROSYSTEMS,AND 
+ 	IT WAS RELEASED IN 1995.
+-->  JAMES GOSLING INITIALLY DEVELOPED JAVA IN SUN MICROSYSTEMS(WHICH WAS LATER MERGED WITH
+	ORACLE CORPATION).
+-->	JAVA CODE THAT RUNS ON ONE PLATFORM DOES NOT NEED TO BE RECOMPLIED TO RUN ON ANOTHER 
+
+C PROGRAMMING                  JAVA
+
+DENNIS RITCHIE                JAMES GOSLING
+1972                          1995
+
+ 
+
+
+
+.. JAVA SE(JAVA STANDARD EDITION)
+
+.. JAVA EE
+.. JAVA ME
+.. JAVA FX
+
+
+JVM(JAVA VIRTUAL MACHINE) IS AN ABSTRACT MACHINE.IT IS CALLED A VIRTUAL MACHINE BECAUSE IT DOESNT
+PHYSICALLY EXIST.IT IS A SPECIFICATION THAT PROVIDES A RUNTIME ENVIRONMENT IN WHICH JAVA BYTECODE 
+CAN BE EXECUTED.
+
+JVM PERFORMS:
+LOADS CODE
+VERIFIES CODE
+EXECUTES CODE
+PROVIDES RUNTIME ENVIRONMENT
+
+
+JRE(JAVA RUNTIME ENVIRONMENT)
+PART OF JVM
+IS A SET OF SOFTWARE TOOLS WHICH ARE USED TO PROVIDE THE RUNTIME EVNIRONMENT
+IT IS THE IMPLEMENTATION OFJVM.IT PHYSICALLY EXISTS.IT CONTAINS A SET OF LIBRARIES + OTHER
+FILES THAT JVM USES AT RUNTIME.
+
+
+JAVA DATA TYPES
+VALUE            TYPE               SIZE          RANGE
+==============================================================
+5                  BYTE                1         -128, 127
+45                 SHORT               2         -32768, 32767 
+12                 INT                 4         
+67L  			LONG			     8       
+34.2f			float            	4    	6 to 7 decimal digits
+34.2				double 			8		15 decimal digits
+'a'				char				2		
+true/false		boolean 			1		true, false
+"hello!"			string
+
+
+
+__________________________________________________________________
+
+-->program to find highest of three numbers:
+
+public class Main
+{
+	public static void main(String[] args) {
+	    int a=5,b=3,c=12,t=0;
+	    if(a>=b && a>=c)t=a;
+	    else if(b>=c)t=b;
+	    else t=c;
+		System.out.println(t);
+	}
+}
+------------------------------------------------------------------
+public class Main
+{
+	public static void main(String[] args) {
+	    int a=5,b=3,c=12;
+		System.out.println(Math.max(Math.max(a,b),c));
+	}
+}
+
+------------------------------------------------------------------
+public class Main
+{
+	public static void main(String[] args) {
+	    int a=5,b=3,c=12;
+		System.out.println(a>=b?(a>=c? a:c):(b>=c? b:c));
+	}
+}
+
+
+-------------------------------------------------------------------
+
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+	    int id=60;
+	    String name="Harshitha";
+		System.out.printf("My name is %s. My id is %d.\n",name,id);
+		System.out.println("My name is "+name+". My id is "+id+".");
+	}
+}
+
+
+output-->
+
+My name is Harshitha. My id is 60.
+My name is Harshitha. My id is 60.
+------------------------------------------------------------------
+
+
+#include <stdio.h>
+
+int main()
+{
+    int a;
+    printf("%d",a);
+
+    return 0;
+}
+
+output-->> 0 (garbage value)
+
+
+
+
+in java
+
+never give empty value to print
+---------------------------------------------------------------------
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+	    int a=5; double b=4;
+		System.out.println(a+b);
+	}
+}(9.0)
+  
+-------------------------------
+
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+	    int a=5; char b='c';
+		System.out.println(a+b);
+	}
+}(104)...............................................ascii value of c=99..a+b=5+99=104
+
+
+----------------------------------------------------------------------------
+
+#include <stdio.h>
+
+int main()
+{
+    int a=5;char b='c';
+    printf("%d",a+b);
+
+    return 0;
+}
+(104)
+
+
+higher size of datatype+lower size of datatype====result will be the datatype with higher size
+when byte and char have same size ---------->>>>byte wins
+
+
+------------------------------------------------------------------------------------------------------
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+	    int a=5; String b="4";
+		System.out.println(a+b);
+	}
+}
+(54)
+
+
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+	    int a=5; String b="4";
+		System.out.println(b+a);
+	}
+}
+(45)
+
+
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+	    double a=5.6; String b="4";
+		System.out.println(b+a);
+	}
+}
+(45.6)
+-----------------------------------------------------------------------------------------------
+
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner inp = new Scanner(System.in);
+	    System.out.print("enter two inputs:");
+	    int a=inp.nextInt(),b=inp.nextInt();
+		System.out.println("sum:"+ a+b);
+	}
+}
+
+
+
+enter two inputs:5 6
+sum:56
+
+===================================================================================================
+
+Scanner: a class that contains methods to take inputs.
+Scanner sc = new Scanner(System.in);
+                           
+
+Inputs                         Method
+
+byte							sc.nextByte()
+short						sc.nextShort()
+int							sc.nextInt()
+long							sc.nextLong()
+float						sc.nextFloat()
+double						sc.nextDouble()
+string						sc.next() {for one word}
+string						sc.nextLine(){for a line(till \n}
+boolean 						sc.nextBoolean()
+
+
+
+======================================================================================================
+JAVA (STRINGS)
+SEQUENCE OF CHARACTERS
+                                                    (1D ARRAY--LINEAR ARRAY)
+SEQUENCE--(CHARACTERS IN AN ARRAY)
+STRING IS A CLASS(String)
+2 ways of creating a string:
+1.  by creating a character array
+2.  by directly assigning string
+"
+String s=new String();
+char b[]={'a','b','c','d'}
+System.out.println(b);
+String s=new String(b);
+System.out.println(s);
+
+"
+output=
+abcd
+abcd
+
+---------------------- 
+LENGTH OF STRING....                          length of array.......   l.length
+----------------------
+s.length()
+
+In JAVA
+indexing of strings is not allowed
+
+use charAt
+s="HELLO WORLD"
+
+System.out.println(s.charAt(0));  //H
+
+---------------
+string into array
+method1.............................
+String s="HELLO WORLD";
+char arr[]=new char[s.length()];
+for (int i=0;i<s.length();i++){
+   arr[i]=s.charAt(i);
+}
+System.out.println(arr);
+
+method 2.............................
+
+String s="HELLO WORLD";
+=============================================
+object oriented programming                   
+
+object=instance(general)
+function inside a class is a method
+
+import java.util.*;
+class Student{
+int roll=10;
+string name="ram";
+}
+public class Sample{
+public static void main(string[] args){
+Student s1=new Student();     
+Student s2=new Student(); 
+Student s3=new Student();   
+s1.name="gayathri";
+s2.name="ram";
+s3.name="sai";
+System.out.println(s1.name);
+System.out.println(s1.name);
+System.out.println(s1.name);             
+} 
+
+
+import java.util.*;
+
+public class Sample{
+    public static int add(int a,int b){
+         return a+b;}
+    public int mul(int n1,int n2){
+         return n1*n2;}
+    public static void main(String[] args){
+
+         System.out.println(add(10,20))   //gives 30
+         System.out.println(mul(10,20))    //error  not a static method
+    }
+}
+
+in a file there should be only one public class
+
+
+import java.util.*;
+PUBLIC class student{    the main class down is already a public class this generates errors..PUBLIC word should be removed ..
+int roll=10;
+string name="ram";
+}
+public class Sample{
+    public static void main(string[] args){
+            System.out.println("hello");
+}
+}
+
+----------------
+
+import java.util.*;
+class student{                                  logics inside the class(in methods)....call the methods out side the class
+   int roll=10;
+   string name="ram";
+   public void displayName(){
+          System.out.println(name);
+     }
+
+}
+public class Sample{
+    public static void main(string[] args){
+            Student s1=new Student();
+            s1.displayName();
+}
+}
+
+------------------
+
+import java.util.*;
+class Instagram{                                  
+   String username="harshitha_sri_sai";
+   private String password="123456";   ////gives error saying password variable is not declared.
+   validatePassword(password_entered){//to access the private variable..the private variables are accessable only in side the class
+   }
+
+}
+public class Sample{
+    public static void main(string[] args){
+            Instagram u1=new Instagram();
+            System.out.println(u1.username);
+            System.out.println(u1.password);
+
+}
+}
+
+-----------------
+
+//to access the private variables out side the class we use getters and setters..these are normal methods..must be public classes to be accessed ouside the class.
+
+
+import java.util.*;
+class Instagram{                                  
+   String username="harshitha_sri_sai";
+   private String password="123456";
+   
+   public void updatePassword(String new_password){
+          password= new_password;
+    }
+   public String getPassword(){   should be a public only
+       return password;
+}
+
+public class Sample{
+    public static void main(string[] args){
+            Instagram u1=new Instagram();
+            System.out.println(u1.username);
+            System.out.println(u1.getPassword());
+            u1.updatePassword("HelloWorld");
+            System.out.println(u1.getPassword());
+
+}		
+}
+	
+--------------------
+
+properties are written in a class known as properties are encapsulated into a class
+classes are encapsulated into a package..
+
+--------------------
+
+calulator
+
+import java.util.Scanner;
+public class Sample{
+    public static void main(string[] args){
+          Scanner s=new Scanner(System.in);
+          int a=s.nextInt();                                    //one try...many catch....one finally block ..nested is allowed but not recommanded(till 3 ok) 
+	  int b=s.nextInt();
+          System.out.println(a/b);
+          try{                                   //try to connect with db
+     System.out.println(a/b);
+             }catch(Exception e){                //if not connected
+     System.out.println("OPPs buddy,you ran into an error");
+             }finally{                                                                  //if error is occured in the code but should not be shown to user
+                                                                                        //then use System.exit.0
+     System.out.println("this is finally block");
+             }
+     System.out.println("program completed");
+
+}
+}
+
+
+-------------------------
+
+try{   
+           try{}
+           catch{}
+           finally{}
+}
+catch{}
+finally{}
+
+------------
+try{//line1   
+     try{//line2
+          try{//line3                  line 1 --handled by exception e
+             }finally{}                line 2 and 3 handled by exception e2
+     catch{Exception e2}
+catch{Exception e}
+finally{}     
+
+
+----------------------------------------------------------------------------------------------------------------------------------
